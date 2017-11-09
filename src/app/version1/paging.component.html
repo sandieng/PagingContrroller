@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <span>Page Size</span>
+      <select (change)="onChange($event)">
+        <option *ngFor="let selectedPageSize of availablePageSizes" value={{selectedPageSize.size}} [selected]="selectedPageSize.value == '5'"
+          >
+          {{selectedPageSize.value}}
+        </option>
+      </select>
+
+      <span *ngIf="morePreviousPages" (click)="getPreviousPage()"><</span>
+      <span *ngIf="moreNextPages" (click)="getNextPage()">></span>
+      <span> {{currentPage}} of {{totalPages}} pages</span>
+
+    </div>
+  </div>
+</div>

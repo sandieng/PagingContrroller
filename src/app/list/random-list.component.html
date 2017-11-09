@@ -1,0 +1,8 @@
+<div class="row">
+  <ul *ngFor="let row of sampleList">
+    <li>{{row.id}} = {{row.details}}</li>
+  </ul>
+
+  <app-paging-control *ngIf="allSampleList" [pageData]="allSampleList" (pageLoaded)="loadPage($event)"></app-paging-control>
+
+</div>
